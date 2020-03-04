@@ -59,7 +59,7 @@ module.exports = function(config) {
       tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
       startConnect: false
     },
-    port: 10876,
+    port: process.env.TRAVIS ? 9876 : 10876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
